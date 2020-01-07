@@ -19,8 +19,8 @@ from data import ProcessData
 VALIDATION_SET_PERCENTAGE = 0.1
 BATCH_SIZE = 1
 LEARNING_RATE = 0.01
-EPOCH = 15
-DATA_POINTS = 300
+EPOCH = 10
+DATA_POINTS = 2000
 
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'

@@ -25,7 +25,7 @@ class ProcessData():
 
     def __preprocess__(self, pil_img):
         w, h = pil_img.size
-        pil_img = pil_img.resize((w, h))
+        pil_img = pil_img.resize((220, 140))
 
         img_nd = np.array(pil_img)
 
@@ -43,6 +43,7 @@ class ProcessData():
         imgs = []
         masks = []
         for idx in self.ids:
+            
             mask_file = glob(self.masks_dir + idx + '*')[0]
             img_file = glob(self.imgs_dir + idx + '*')[0]
 

@@ -6,8 +6,8 @@ import os
 from data import ProcessData
 
 device= 'gpu' if torch.cuda.is_available() else 'cpu'
-path = './unet_model.mdl'
 current_path = os.getcwd()
+path = current_path + '/unet_model.mdl'
 img_path = current_path + '/data/train/'
 mask_path = current_path + '/data/train_masks/'
 
@@ -25,7 +25,7 @@ segmented = (segmented).astype(np.uint8)
 print(segmented[0].shape)
 plt.subplot(1,1,1)
 plt.axis("off")
-plt.title("Compare")
 
-plt.imshow(segmented[0].squeeze())
+
+plt.imshow(segmented[0].squeeze() * 255, cmap='gray')
 plt.show()
